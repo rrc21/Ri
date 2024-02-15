@@ -1,4 +1,4 @@
-clone the repo :  
+clone the repo :  https://github.com/rrc21/Ri.git
 npm i
 npm run dev
 Here, i have connected mongodb and created a db "mydb"
