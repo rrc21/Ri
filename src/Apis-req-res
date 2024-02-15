@@ -1,0 +1,31 @@
+BASE-URL='http://localhost:3002'
+
+API-REQUEST-URL               METHOD                   REQ                                         RES
+BASE-URL+
+/login               		post             {"email":"abc@gmail.com",                    "data": {
+		                                "password":"Abc@123"}                       "accesstoken": "fghjk",
+				                                                            "refreshtoken": "eyJhbGci"
+						                                                },
+						                                                "code": 200,
+						                                                "message": "success",
+						                                                "userDetails": {
+						                                                    "role": "User",
+						                                                    "name": "abc",
+						                                                    "login_status": true
+						                                                }
+				                                                             } 
+				                                                                 
+/logout/:id                    post                user_id                                 {"user logout successfull"}
+
+/get-users                     get                                                       [{users data 1},{user data 2},....]
+
+/add-user                      post          {name:"xyz",email:"xyz@gmai                   "user created successfully"
+                                               l.com,password:"..",number:67}
+/create-group                  post          {group_name:"family",members:[users ids]}     "group created successfully"
+
+/delete-group/:id              delete                {}                                     "group deleted successfully"
+
+/send-message-in-group/:id     post            {from:from_data,message:"hii"}                 "message sent"
+
+/get-messages/:id              get                                                        [{"from":fromdata,message:"hi"},{}...]
+                                          
