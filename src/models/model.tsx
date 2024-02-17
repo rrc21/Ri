@@ -24,9 +24,6 @@ const userSchema = new Schema({
     groups:{
         type:Array,
     },
-    messages:{
-        type:Array,
-    }
 
 });
 

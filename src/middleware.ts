@@ -37,7 +37,8 @@ async function authenticateToken(req: any, res: any,next:NextFunction) {
     req.user_id = decoded.user_id;
     req.loginuser = decoded.login_user;
     req.role = decoded.user_role;
-    req.loginuseremail = decoded.login_user_mail
+    req.login_status=decoded.login_status;
+    req.email = decoded.email
    
     next();
    }
