@@ -1,16 +1,37 @@
-import {Router} from "express";
-const router:Router = Router()
-import usersController from '../controllers/controller';
-import authenticateToken from '../middleware';
+import { Router } from "express";
+const router: Router = Router();
+// import usersController from "../controllers/controller";
+import loginLogoutController from "../controllers/loginLogoutController";
+import authenticateToken from "../middleware";
+import userController from '../controllers/userController';
+import groupController from '../controllers/groupController';
+import messageController from '../controllers/messageController';
 
-router.route('/login').post(usersController.tologin);
-router.route('/logout/:id').put(usersController.tologout);
-router.route('/get-users').get(authenticateToken,usersController.getUsers);
-router.route('/add-user').post(authenticateToken,usersController.postUser);
-router.route('/create-group').post(usersController.createGroup);
-router.route('/delete-group/:id').delete(usersController.deleteGroup);
-router.route('/send-message-in-group/:id').put(usersController.messageInGroup)
-router.route('/get-messages/:id').get(usersController.getMessagesInGroup)
+router.route("/login")
+.post(loginLogoutController.tologin);
 
+router.route("/logout/:id")
+.put(loginLogoutController.tologout);
 
-export { router as userRoutes}
+router.route("/get-users")
+.get(authenticateToken, userController.getUsers);
+
+router.route("/add-user")
+.post(authenticateToken, userController.postUser);
+
+router.route("/create-group")
+.post(groupController.createGroup);
+
+router.route("/delete-group/:id")
+.delete(groupController.deleteGroup);
+
+router.route("/add-member-to-group")
+.post(groupController.addMemberToGroup);
+
+router.route("/send-message-in-group/:id")
+.put(messageController.messageInGroup);
+
+router.route("/get-messages/:id")
+.get(messageController.getMessagesInGroup);
+
+export { router as userRoutes };

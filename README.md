@@ -6,3 +6,4 @@ i have created 2 models for collections  "users" and "groups" respectively.
 implemented api's for - login , logout,adduser,creategroup,delete group,addtogroup,group message and getmessages in group.
 implemented authentication function for validating the user.
 In Apis-req-res file i am providing the api related response and request
+In output folder i have added screenshots from which i have tested apis through postman

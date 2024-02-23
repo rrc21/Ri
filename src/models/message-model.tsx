@@ -1,22 +1,20 @@
-import { ObjectId } from 'mongodb';
-import mongoose from'mongoose';
+import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    id:{
-        type:Number,
-    },
-    name:{
-          type:String,
-    },
-    members:{
-        type:Array,
-    },
-    messages:{
-        type:Array,
-    }
-
+  name: {
+    type: String,
+    required: true,
+  },
+  members: {
+    type: Array,
+    required: true,
+  },
+  messages: {
+    type: Array,
+    required: true,
+  },
 });
 
-const Groups = mongoose.model('groups',  userSchema);
+const Groups = mongoose.model("groups", userSchema);
 export default Groups;
-
